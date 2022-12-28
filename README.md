@@ -4,6 +4,8 @@
 - [x] Code Structure
 - [x] Variables
 - [x] Strict Mode
+- [x] Global This
+- [x] Data Type
 
 학습 주제별로 브랜치를 나눠 수업을 진행합니다.
 
