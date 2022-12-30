@@ -26,6 +26,22 @@ const frontEndDev = [
 // console.log(frontEndDev[3]);
 // console.log(frontEndDev[4]);
 // console.log(frontEndDev[5]);
+// console.log(frontEndDev[6]);
+
+let i = frontEndDev.length;
+
+while (i >= 0) {
+  console.log(i, frontEndDev[i]);
+  i--;
+}
+
+// let copyArray = [...frontEndDev];
+let copyArray = frontEndDev.slice();
+
+while (copyArray.length) {
+  console.log(copyArray.pop());
+}
+
 
 /* 프론트엔드 개발 집합을 순환해서 각 아이템을 Console 패널에 출력 -------------------- */
 
