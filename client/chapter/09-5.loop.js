@@ -106,11 +106,36 @@ const randomUser = {
 // - for ~ of 문
 // - 성능 비교 진단
 
-// for (let value in randomUser) {
-//   let L1 = randomUser[value];
+// for (let key in randomUser) {
+//   let L1 = randomUser[key];
 //   if (typeof L1 === "object") {
 //     for (let value in L1) {
-//       console.log(value);
+//       let L2 = L1[key];
+//       if ({}.hasOwnProperty.call(randomUser.key)) {
+//         console.log("\t L2 : ", key);
+//         if (typeof L2 === "object") {
+//         }
+//       }
 //     }
 //   }
 // }
+
+console.log(Object.entries);
+console.log(Object.key);
+console.log(Object.values);
+
+for (let key of Object.keys(randomUser)) {
+  console.log(key);
+}
+for (let value of Object.keys(randomUser)) {
+  console.log(value);
+}
+
+console.log(Object.entries(randomUser));
+
+for (let keyValue of Object.entries(randomUser)) {
+  let key = keyValue[0];
+  let value = keyValue[1];
+
+  console.log("L1 : ", key);
+}
