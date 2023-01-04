@@ -58,10 +58,31 @@ console.log(user.totalGrades());
 
 // pow(numeric: number, powerCount: number): number;
 // 거듭제곱되는 함수만들기
-let pow = ()=>{
+let pow = (numeric, powerCount) => {
+  let result = 1;
+  for (let i = 0; i < powerCount; i++) {
+    result *= numeric;
+  }
 
+  return result;
 };
 
+let powExpression = (numeric, powerCount) =>
+  Array(powerCount)
+    .fill(null)
+    .reduce((acc) => acc * numeric, 1);
 // repeat(text: string, repeatCount: number): string;
 // 특정문자를 반복시켜주는 함수
-let repeat;
+let repeat = (text, repeatCount) => {
+  let result = "";
+  for (let i = 0; i < repeatCount; i++) {
+    result += text;
+  }
+  return result;
+};
+
+let repeatExpression = (text, repeatCount) => {
+  return Array(repeatCount)
+    .fill(null)
+    .reduce((acc) => (acc + text), "");
+};
