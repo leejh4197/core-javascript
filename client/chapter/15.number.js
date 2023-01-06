@@ -63,7 +63,8 @@ const getRandomMinMax = (min, max) => {
   return Math.round(Math.random() * (max - min) + min);
 };
 
-console.log(getRandomMinMax(2, 4));
+console.log(getRandomMinMax(3,10));
+console.log(Math.random())
 
 /* 진법 ------------------------------------------------------------------ */
 
