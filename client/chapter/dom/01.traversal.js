@@ -1,3 +1,5 @@
+/*global getNode */
+
 /* ---------------------------------------------------------------------- */
 /* DOM traversal                                                          */
 /* ---------------------------------------------------------------------- */
@@ -28,7 +30,7 @@
 
 // let first = document.querySelector(".first");
 
-let [first, second] = document.querySelectorAll("span");
+// let [first, second] = document.querySelectorAll("span");
 
 // console.log(first, second);
 
@@ -40,17 +42,15 @@ console.log(getNode(".first").matches(".first"));
 
 console.log(getNode("h1").contains(getNode(".first")));
 
-
-
-let first = getNode('.first');
+let first = getNode(".first");
 
 let clicked = false;
-document.addEventListener('click', () =>{
-  if(first.classList.contains('.first') && !clicked){
-    first.classList.add('is-active')
-  }else{
-    first.classList.remove('is-active')
+document.addEventListener("click", () => {
+  if (first.classList.contains(".first") && !clicked) {
+    first.classList.add("is-active");
+  } else {
+    first.classList.remove("is-active");
   }
 
-  clicked = !clicked
-})
+  clicked = !clicked;
+});
