@@ -1,4 +1,5 @@
-/* eslint-disable no-undef */
+import { getNode, sum, getInputValue, clearContents, insertLast } from "./lib/index.js";
+
 const first = getNode("#firstNumber");
 const second = getNode("#secondNumber");
 const done = getNode("#done");

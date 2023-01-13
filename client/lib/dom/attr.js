@@ -69,7 +69,7 @@ attr()
 
  */
 
-function getAttr(node, prop) {
+export function getAttr(node, prop) {
   // node = '.first'
   // prop = 'class'
 
@@ -81,7 +81,7 @@ function getAttr(node, prop) {
 }
 
 // computed property
-function setAttr(node, prop, value) {
+export function setAttr(node, prop, value) {
   // validation : 확인
   if (typeof node === 'string') node = getNode(node);
   if (typeof prop !== 'string')
@@ -102,7 +102,7 @@ function setAttr(node, prop, value) {
 
 // const attr = (node,prop,value) => !value ? getAttr(node,prop) : setAttr(node,prop,value);
 
-function attr(node, prop, value) {
+export function attr(node, prop, value) {
   // if(!value){
   //   return getAttr(node,prop);
   // }else{
