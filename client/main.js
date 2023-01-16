@@ -1,4 +1,4 @@
-import { getInputValue, getNode, getRandom, showAlert } from "./lib/index.js";
+import { copy, getInputValue, getNode, getRandom, showAlert } from "./lib/index.js";
 import { jujeobData } from "./data/data.js";
 import { clearContents } from "./lib/index.js";
 import { insertLast } from "./lib/dom/index.js";
@@ -30,4 +30,14 @@ const clickSubmitHandler = (e) => {
   insertLast(result, randomJujeob);
 };
 
+const clickCopyHandler = () =>{
+  let text = result.textContent;
+  
+  copy(text).then(()=>{
+
+    showAlert('.alert-success','클립보드 복사가 완료 됐습니다.',2000)
+  })
+}
+
 submit.addEventListener("click", clickSubmitHandler);
+result.addEventListener('click', clickCopyHandler)
