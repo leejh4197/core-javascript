@@ -6,7 +6,7 @@
 4 : complete // 완료
  */
 
-import { typeError } from "../error/typeError";
+// import { typeError } from "../error/typeError";
 
 export const xhrData = ({
   url = "",
@@ -116,7 +116,7 @@ const defaultOptions = {
   body: null,
 };
 
-const xhrPromise = (options = {}) => {
+export const xhrPromise = (options = {}) => {
   const xhr = new XMLHttpRequest();
 
   const { method, url, body, headers } = Object.assign(
@@ -125,7 +125,7 @@ const xhrPromise = (options = {}) => {
     options
   );
 
-  if (!url) typeError("서버와 통신할 url 인자는 반드시 필요합니다.");
+  //   if (!url) typeError("서버와 통신할 url 인자는 반드시 필요합니다.");
 
   xhr.open(method, url);
 
@@ -145,12 +145,54 @@ const xhrPromise = (options = {}) => {
   });
 };
 
-xhrPromise({
-  url: "https://jsonplaceholder.typicode.com/users/1",
-})
+// xhrPromise({
+//   url: "https://jsonplaceholder.typicode.com/users/1",
+// })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// get
+xhrPromise.get = (url) => {
+  return xhrPromise({
+    url,
+  });
+};
+
+// post
+xhrPromise.post = (url, body) => {
+  return xhrPromise({
+    url,
+    body,
+    method: "POST",
+  });
+};
+
+// put
+xhrPromise.post = (url, body) => {
+  return xhrPromise({
+    url,
+    body,
+    method: "PUT",
+  });
+};
+
+// delete
+xhrPromise.post = (url) => {
+  return xhrPromise({
+    url,
+    method: "DELETE",
+  });
+};
+
+xhrPromise
+  .get("https://jsonplaceholder.typicode.com/users/1")
   .then((res) => {
-    console.log(res);
+    res;
   })
   .catch((err) => {
-    console.log(err);
+    err;
   });

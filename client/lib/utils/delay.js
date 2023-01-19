@@ -38,7 +38,7 @@ const defaultOptions = {
   errorMessage: "알 수 없는 오류가 발생했습니다.",
 };
 
-const delayP = (options = {}) => {
+export const delayP = (options = {}) => {
   // 얕은 복사
   // defualt값이 변질되는 것을 방지하기 위해 직접 defaultOptions를 사용하지 않고 변수에 얕은 복사로 지정한다
   let config = { ...defaultOptions };
@@ -64,7 +64,7 @@ delayP({
   data: "안녕",
   timeout: 1500,
 }).then((res) => {
-  console.log(res);
+  // console.log(res);
 });
 
 // delayP().then((res)=>{
@@ -72,3 +72,33 @@ delayP({
 // }).catch((err)=>{
 //   console.log(err)
 // })
+
+// async, await
+async function delayA() {
+  return "완료";
+}
+
+let result = await delayA();
+
+// console.log(result);
+
+// async function 라면끓이기() {
+//   try {
+//     await delayP();
+//     first.style.top = "-100px";
+//     await delayP();
+//     first.style.transform = "rotate(360deg)";
+//     await delayP();
+//     first.style.top = "0px";
+//     await delayP();
+//     console.log("계란 넣기");
+
+//     throw new Error("계란 껍질이 들어가버렸다!");
+//     await delayP();
+//     console.log("그릇에 담기");
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+// 라면끓이기();
